@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { MailIcon, PhoneIcon, MapPinIcon } from 'lucide-react';
 import { dashboardData } from '@/data/dashboard';
 import { TiltCard } from './TiltCard';
@@ -11,11 +10,10 @@ export function ProfileCard() {
       <div className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl p-6 border border-neutral-border dark:border-dark-neutral-border overflow-hidden">
         <div className="flex items-start gap-4 mb-4">
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-neutral-border dark:border-dark-neutral-border shrink-0">
-            <Image
+            <img
               src={dashboardData.user.avatar}
               alt={dashboardData.user.name}
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1 min-w-0 pt-1">

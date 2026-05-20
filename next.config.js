@@ -57,7 +57,7 @@ module.exports = () => {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
-      unoptimized: isExport,
+      unoptimized: true,
       remotePatterns: [
         {
           protocol: 'https',

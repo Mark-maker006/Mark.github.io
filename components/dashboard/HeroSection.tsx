@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { PlayIcon, VideoIcon, MapPinIcon, ClockIcon } from 'lucide-react';
 import { dashboardData } from '@/data/dashboard';
 import { TiltCard } from './TiltCard';
@@ -57,12 +56,11 @@ export function HeroSection() {
               </h3>
               {dashboardData.upcomingInterviews.length > 0 && (
                 <div className="flex items-center gap-2 p-1.5 bg-neutral-background dark:bg-dark-neutral-border/30 rounded-lg">
-                  <div className="relative w-8 h-8 rounded-full overflow-hidden shrink-0">
-                    <Image
+                  <div className="w-8 h-8 rounded-full overflow-hidden shrink-0">
+                    <img
                       src={dashboardData.upcomingInterviews[0].avatar}
                       alt={dashboardData.upcomingInterviews[0].name}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -132,12 +130,10 @@ export function HeroSection() {
                             key={idx}
                             className="w-6 h-6 rounded-full border-2 border-neutral-surface dark:border-dark-neutral-surface overflow-hidden shrink-0"
                           >
-                            <Image
+                            <img
                               src={candidate}
                               alt="Candidate"
-                              width={24}
-                              height={24}
-                              className="object-cover"
+                              className="w-full h-full object-cover"
                             />
                           </div>
                         ))}
