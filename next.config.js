@@ -44,16 +44,20 @@ const securityHeaders = [
 ];
 
 module.exports = () => {
+  const isExport = process.env.NEXT_EXPORT === 'true';
+  
   const plugins = [withBundleAnalyzer];
   return plugins.reduce((acc, next) => next(acc), {
-    output: process.env.NEXT_EXPORT === 'true' ? 'export' : undefined,
+    output: isExport ? 'export' : undefined,
+    basePath: isExport ? '/Mark.github.io' : '',
+    assetPrefix: isExport ? '/Mark.github.io/' : '',
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
-      unoptimized: process.env.NEXT_EXPORT === 'true',
+      unoptimized: isExport,
       remotePatterns: [
         {
           protocol: 'https',
