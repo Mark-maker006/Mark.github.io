@@ -26,6 +26,10 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --radius: 0.5rem;
+    --gradient-bg: linear-gradient(135deg, #F8FAFC 0%, #FEF08A 100%);
+    --gradient-bg-dark: radial-gradient(circle at top right, rgba(212, 255, 0, 0.1) 0%, #09090B 70%);
+    --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.05);
+    --shadow-elevated: 0 10px 32px -4px rgba(0, 0, 0, 0.1);
   }
 
   .dark {
@@ -46,6 +50,10 @@
     --destructive-foreground: 0 85.7% 97.3%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
+    --gradient-bg: radial-gradient(circle at top right, rgba(212, 255, 0, 0.1) 0%, #09090B 70%);
+    --gradient-bg-dark: radial-gradient(circle at top right, rgba(212, 255, 0, 0.1) 0%, #09090B 70%);
+    --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.3);
+    --shadow-elevated: 0 10px 32px -4px rgba(0, 0, 0, 0.4);
   }
 
   *,

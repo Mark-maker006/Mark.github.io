@@ -26,8 +26,8 @@ export default function Page() {
       <Header className="mb-4" />
 
       <LandingPrimaryImageCtaSection
-        title="A simpler way to manage your money"
-        description="Take charge of your finances with Mevolut. Your money, clear and simple."
+        title="HR Management Made Easy"
+        description="Take charge of your workforce with Mark.cc. Manage employees, interviews, and recruitment with ease."
         imageSrc="/static/images/1.jpg"
         imageAlt="Dashboard Preview"
         imagePosition="right"
@@ -148,7 +148,7 @@ export default function Page() {
 
       <LandingProductSteps
         title="How it Works"
-        description="Get started with Mevolut in three simple steps. No complicated setup, no hidden fees."
+        description="Get started with Mark.cc in three simple steps. No complicated setup, no hidden fees."
         display="grid"
         withBackground={false}
         variant="primary"
@@ -248,11 +248,11 @@ export default function Page() {
       <LandingTestimonialReadMoreWrapper>
         <LandingTestimonialGrid
           title="Loved by thousands of users"
-          description="See what our customers have to say about managing their finances with Mevolut."
+          description="See what our customers have to say about managing their workforce with Mark.cc."
           testimonialItems={[
             {
               name: 'Sarah Anderson',
-              text: 'Mevolut made budgeting so much easier for me. I can finally see where my money goes each month and make smarter decisions about my spending.',
+              text: 'Mark.cc made HR management so much easier for me. I can finally see where my team stands and make smarter decisions about hiring.',
               handle: '@sarahanderson',
               imageSrc: '/static/images/people/4.webp',
               url: '#',
@@ -260,7 +260,7 @@ export default function Page() {
             },
             {
               name: 'John Bennett',
-              text: "Mevolut helped me finally understand where my money goes each month. Now I feel in control of my finances and I'm actually saving money for the first time.",
+              text: "Mark.cc helped me finally understand my recruitment pipeline. Now I feel in control of hiring and we're actually growing the team faster.",
               handle: '@johnbennett',
               imageSrc: '/static/images/people/5.webp',
               url: '#',
@@ -268,14 +268,14 @@ export default function Page() {
             },
             {
               name: 'Maria Garcia',
-              text: "The automatic savings feature is a game changer. I've saved more in three months with Mevolut than I did all last year trying to do it manually.",
+              text: "The interview scheduling feature is a game changer. I've hired more efficiently in three months with Mark.cc than I did all last year.",
               handle: '@mariagarcia',
               imageSrc: '/static/images/people/6.webp',
               url: '#',
             },
             {
               name: 'David Kim',
-              text: 'I love how simple everything is. No confusing menus or complicated features. Just straightforward money management that actually works.',
+              text: 'I love how simple everything is. No confusing menus or complicated features. Just straightforward HR management that actually works.',
               handle: '@davidkim',
               imageSrc: '/static/images/people/7.webp',
               url: '#',
@@ -283,14 +283,14 @@ export default function Page() {
             },
             {
               name: 'Emily Rodriguez',
-              text: 'Being able to see all my accounts in one place has been incredible. I finally have a complete picture of my financial situation and can plan accordingly.',
+              text: 'Being able to see all employee data in one place has been incredible. I finally have a complete picture of my team and can plan accordingly.',
               handle: '@emilyrodriguez',
               imageSrc: '/static/images/people/8.webp',
               url: '#',
             },
             {
               name: 'Michael Thompson',
-              text: "The security features give me peace of mind. I know my financial data is protected and my privacy is respected. That's worth everything to me.",
+              text: "The security features give me peace of mind. I know my employee data is protected and privacy is respected. That's worth everything to me.",
               handle: '@michaelthompson',
               imageSrc: '/static/images/people/9.webp',
               url: '#',
@@ -298,14 +298,14 @@ export default function Page() {
             },
             {
               name: 'Jessica Lee',
-              text: 'Mevolut has completely changed how I think about money. The insights and reports help me make better financial decisions every single day.',
+              text: 'Mark.cc has completely changed how I manage my team. The insights and reports help me make better HR decisions every single day.',
               handle: '@jessicalee',
               imageSrc: '/static/images/people/10.webp',
               url: '#',
             },
             {
               name: 'Robert Martinez',
-              text: "I was skeptical at first, but Mevolut has exceeded all my expectations. It's intuitive, powerful, and has genuinely improved my financial health.",
+              text: "I was skeptical at first, but Mark.cc has exceeded all my expectations. It's intuitive, powerful, and has genuinely improved our HR processes.",
               handle: '@robertmartinez',
               imageSrc: '/static/images/people/11.webp',
               url: '#',
@@ -341,37 +341,37 @@ export default function Page() {
       <LandingFaqCollapsibleSection
         id="faq"
         title="Frequently Asked Questions"
-        description="Got questions? We've got answers. Find everything you need to know about Mevolut."
+        description="Got questions? We've got answers. Find everything you need to know about Mark.cc."
         faqItems={[
           {
-            question: 'Is Mevolut free to use?',
+            question: 'Is Mark.cc free to use?',
             answer:
-              'Yes! Mevolut offers a free plan with essential features. We also have premium plans with advanced features for users who need more functionality. There are no hidden fees or surprise charges.',
+              'Yes! Mark.cc offers a free plan with essential features. We also have premium plans with advanced features for teams who need more functionality. There are no hidden fees or surprise charges.',
           },
           {
-            question: 'How secure is my financial data?',
+            question: 'How secure is my employee data?',
             answer:
-              'Your security is our top priority. We use 256-bit encryption, the same level of security used by major banks. Your data is protected with multiple layers of security, and we never sell your personal information to third parties.',
+              'Your security is our top priority. We use 256-bit encryption, the same level of security used by major corporations. Your data is protected with multiple layers of security, and we never sell your personal information to third parties.',
           },
           {
-            question: 'Which banks can I connect to Mevolut?',
+            question: 'Which HR systems can I integrate with Mark.cc?',
             answer:
-              'Mevolut supports thousands of banks and credit unions across the United States. We work with all major banks and most regional institutions. If you have questions about a specific bank, please contact our support team.',
+              'Mark.cc supports integration with thousands of HR systems and payroll providers. We work with all major providers and most regional systems. If you have questions about a specific integration, please contact our support team.',
           },
           {
-            question: 'Can I use Mevolut on my phone?',
+            question: 'Can I use Mark.cc on my phone?',
             answer:
-              'Absolutely! Mevolut works seamlessly on all devices including smartphones, tablets, and desktop computers. Access your finances anytime, anywhere with our responsive web app.',
+              'Absolutely! Mark.cc works seamlessly on all devices including smartphones, tablets, and desktop computers. Access your HR data anytime, anywhere with our responsive web app.',
           },
           {
-            question: 'How does automatic saving work?',
+            question: 'How does interview scheduling work?',
             answer:
-              "Our smart algorithms analyze your spending patterns and income to automatically set aside small amounts you won't miss. You can customize your savings goals and rules, and we'll handle the rest automatically.",
+              "Our smart scheduling system analyzes availability and preferences to automatically suggest optimal interview times. You can customize your scheduling rules, and we'll handle the rest automatically.",
           },
           {
             question: 'What if I need help or have questions?',
             answer:
-              'Our customer support team is here to help! You can reach us via email, live chat, or phone. We also have a comprehensive help center with guides and tutorials to help you get the most out of Mevolut.',
+              'Our customer support team is here to help! You can reach us via email, live chat, or phone. We also have a comprehensive help center with guides and tutorials to help you get the most out of Mark.cc.',
           },
         ]}
         withBackground={false}
@@ -381,8 +381,8 @@ export default function Page() {
       />
 
       <LandingSaleCtaSection
-        title="Ready to take control? Join Mevolut today."
-        description="Start managing your money smarter. Sign up free and see the difference in minutes."
+        title="Ready to take control? Join Mark.cc today."
+        description="Start managing your workforce smarter. Sign up free and see the difference in minutes."
         withBackground
         withBackgroundGlow
         variant="primary"

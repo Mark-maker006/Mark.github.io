@@ -13,18 +13,18 @@ export default function Status() {
           </h1>
 
           <p className="mt-6 md:text-xl">
-            At Mevolut, we prioritize the availability and security of your
-            financial tools. Our system status page provides real-time updates
+            At Mark.cc, we prioritize the availability and security of your
+            HR management tools. Our system status page provides real-time updates
             on the operational status of our platform, including services
-            related to managing your money, tracking expenses, sending money,
-            and growing your savings. We are committed to maintaining a seamless
-            experience so you can manage your finances easily and confidently.
+            related to managing employees, tracking interviews, and streamlining
+            recruitment processes. We are committed to maintaining a seamless
+            experience so you can manage your workforce easily and confidently.
           </p>
 
           <p className="mt-6 md:text-xl">
             If you encounter any issues or have questions about our system, our
             team is here to support you. Stay informed with the latest updates
-            to ensure you always have access to your finances when you need them
+            to ensure you always have access to your HR tools when you need them
             most.
           </p>
         </section>

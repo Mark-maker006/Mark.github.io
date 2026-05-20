@@ -1,10 +1,10 @@
 {
-  "name": "Mevolut",
-  "description": "Manage your money the easy way with Mevolut. Track expenses, send money, and grow your savings – safely and simply. Sign up free today!",
+  "name": "mark.cc",
+  "description": "HR Dashboard - Manage your workforce efficiently. Track employees, interviews, and recruitment processes.",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run appinfo && cross-env PORT=6006 NODE_OPTIONS='--no-warnings' next dev",
+    "dev": "npm run appinfo && cross-env PORT=30001 NODE_OPTIONS='--no-warnings' next dev",
     "build": "npm run appinfo && next build",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",

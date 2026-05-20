@@ -1,11 +1,11 @@
 const metadata = {
-  title: 'Mevolut | Simple B2C Fintech for your Money',
+  title: 'Mark.cc | HR Dashboard',
   description:
-    'Manage your money the easy way with Mevolut. Track expenses, send money, and grow your savings – safely and simply. Sign up free today!',
-  domain: 'pageai.pro',
+    'HR Dashboard - Manage your workforce efficiently. Track employees, interviews, and recruitment processes with ease.',
+  domain: 'mark.cc',
   logoTitle: '',
-  businessName: 'Mevolut',
-  siteUrl: 'https://pageai.pro',
+  businessName: 'Mark.cc',
+  siteUrl: 'https://mark.cc',
   siteRepo: '',
   socialBanner: '/api/og',
   supportEmail: '',
@@ -19,10 +19,10 @@ const metadata = {
   facebook: '',
   threads: '',
   mastodon: '',
-  author: 'Mevolut',
-  language: 'en-us',
-  theme: 'light',
-  locale: 'en-US',
+  author: 'Mark.cc',
+  language: 'zh-cn',
+  theme: 'dark',
+  locale: 'zh-CN',
 };
 
 module.exports = { metadata };

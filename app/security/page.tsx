@@ -13,16 +13,16 @@ export default function Security() {
           </h1>
 
           <p className="mt-6 md:text-xl">
-            At Mevolut, we understand that managing your finances requires
-            trust. That’s why we employ industry-leading security measures to
-            protect your personal information and funds. From encrypted
+            At Mark.cc, we understand that managing your workforce requires
+            trust. That's why we employ industry-leading security measures to
+            protect your employee information and HR data. From encrypted
             transactions to secure data storage, your safety is our top concern.
           </p>
 
           <p className="mt-6 md:text-xl">
             Our platform is designed with your privacy in mind, ensuring that
-            your money and data are always safeguarded. Focus on growing your
-            savings, sending money, and managing expenses with
+            your employee data is always safeguarded. Focus on managing your team,
+            tracking interviews, and growing your workforce with
             confidence—knowing that security is built into every detail of our
             service.
           </p>

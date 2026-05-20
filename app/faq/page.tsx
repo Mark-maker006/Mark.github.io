@@ -13,34 +13,36 @@ export default function FAQ() {
           </h1>
 
           <p className="mt-6 md:text-xl">
-            Welcome to the Mevolut FAQ. Here you'll find answers to the most
-            common questions about managing your money with us.
+            Welcome to the Mark.cc FAQ. Here you'll find answers to the most
+            common questions about managing your workforce with us.
           </p>
 
           <p className="mt-6 md:text-xl">
-            <strong>How do I get started with Mevolut?</strong> Signing up is
+            <strong>How do I get started with Mark.cc?</strong> Signing up is
             easy and free! Simply create an account to start tracking your
-            expenses, sending money, and growing your savings securely.
+            employees, scheduling interviews, and streamlining recruitment
+            securely.
           </p>
 
           <p className="mt-6 md:text-xl">
-            <strong>Is my financial information safe?</strong> Absolutely. We
+            <strong>Is my employee information safe?</strong> Absolutely. We
             prioritize your security with advanced encryption and security
             protocols to keep your data safe.
           </p>
 
           <p className="mt-6 md:text-xl">
-            <strong>Can I use Mevolut on any device?</strong> Yes, our platform
+            <strong>Can I use Mark.cc on any device?</strong> Yes, our platform
             is fully responsive and accessible from any device with internet
             access.
           </p>
 
           <p className="mt-6 md:text-xl">
             <strong>
-              What features are available to help me manage my money?
+              What features are available to help me manage my workforce?
             </strong>{' '}
-            You can track expenses, send and receive money, set savings goals,
-            and view detailed reports to better understand your finances.
+            You can track employees, schedule interviews, manage recruitment
+            pipelines, and view detailed reports to better understand your HR
+            operations.
           </p>
 
           <p className="mt-6 md:text-xl">

@@ -9,19 +9,19 @@ export default function Features() {
       <div className="w-full flex flex-col items-center my-12">
         <section className="w-full p-6 container-narrow">
           <h1 className="text-4xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-6xl fancy-heading">
-            Powerful Features to Simplify Your Finances
+            Powerful Features to Simplify Your HR Operations
           </h1>
 
           <p className="mt-6 md:text-xl">
-            Discover how Mevolut makes managing your money effortless. From
-            tracking expenses to sending payments, our features are designed to
-            help you stay in control of your financial life with ease.
+            Discover how Mark.cc makes managing your workforce effortless. From
+            tracking employees to scheduling interviews, our features are designed
+            to help you stay in control of your HR operations with ease.
           </p>
 
           <p className="mt-6 md:text-xl">
-            Whether you're saving for a goal or sending money to loved ones, our
-            platform offers a seamless and secure experience. Sign up for free
-            today and start simplifying your financial journey.
+            Whether you're hiring for a new role or managing your current team,
+            our platform offers a seamless and secure experience. Sign up for free
+            today and start simplifying your HR journey.
           </p>
         </section>
       </div>

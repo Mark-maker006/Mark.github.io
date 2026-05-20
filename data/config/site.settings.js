@@ -5,7 +5,7 @@ const siteConfig = {
   ...metadata,
 
   // Configure analytics
-  disableAnalytics: false, // Disable all analytics on the site
+  disableAnalytics: true, // Disable all analytics on the site
   analytics: {
     // By default Vercel analytics is enabled.
     //
