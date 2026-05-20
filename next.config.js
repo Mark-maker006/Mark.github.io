@@ -49,8 +49,8 @@ module.exports = () => {
   const plugins = [withBundleAnalyzer];
   return plugins.reduce((acc, next) => next(acc), {
     output: isExport ? 'export' : undefined,
-    basePath: isExport ? '/Mark.github.io' : '',
-    assetPrefix: isExport ? '/Mark.github.io/' : '',
+    basePath: '',
+    assetPrefix: '',
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
