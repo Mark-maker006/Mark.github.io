@@ -97,16 +97,18 @@ export const LandingNewsletterSection = ({
               <Image
                 src="/static/images/people/1.webp"
                 alt="Person 1"
-                width={200}
-                height={200}
+                width={56}
+                height={56}
+                sizes="56px"
                 className="w-14 h-14 shrink-0 rounded-full"
               />
 
               <Image
                 src="/static/images/people/2.webp"
                 alt="Person 2"
-                width={200}
-                height={200}
+                width={64}
+                height={64}
+                sizes="64px"
                 className={clsx(
                   'w-16 h-16 shrink-0 rounded-full rotate-12 -ml-6',
                   variant === 'primary' ? 'border-2 border-primary-500' : '',
@@ -119,8 +121,9 @@ export const LandingNewsletterSection = ({
               <Image
                 src="/static/images/people/3.webp"
                 alt="Person 3"
-                width={200}
-                height={200}
+                width={80}
+                height={80}
+                sizes="80px"
                 className={clsx(
                   'w-20 h-20 shrink-0 rounded-full relative z-10 -ml-4',
                   variant === 'primary' ? 'border-2 border-primary-500' : '',
@@ -133,8 +136,9 @@ export const LandingNewsletterSection = ({
               <Image
                 src="/static/images/people/4.webp"
                 alt="Person 4"
-                width={200}
-                height={200}
+                width={64}
+                height={64}
+                sizes="64px"
                 className={clsx(
                   'w-16 h-16 shrink-0 rounded-full -rotate-12 -ml-4',
                   variant === 'primary' ? 'border-2 border-primary-500' : '',
@@ -147,8 +151,9 @@ export const LandingNewsletterSection = ({
               <Image
                 src="/static/images/people/5.webp"
                 alt="Person 5"
-                width={200}
-                height={200}
+                width={56}
+                height={56}
+                sizes="56px"
                 className="w-14 h-14 shrink-0 rounded-full -ml-4"
               />
             </div>

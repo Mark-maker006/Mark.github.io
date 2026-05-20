@@ -68,6 +68,7 @@ export const LandingTestimonial = ({
           <Image
             width={100}
             height={100}
+            sizes="40px"
             className="h-10 w-10 flex-none rounded-full bg-gray-50"
             src={imageSrc}
             alt=""
