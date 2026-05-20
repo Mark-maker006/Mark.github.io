@@ -1,29 +1,60 @@
-# Mark.github.io
+# Mark.cc - HR Dashboard
 
-HR Dashboard - Manage your workforce efficiently.
+A modern HR Dashboard built with Next.js and Tailwind CSS.
 
-## Installation
+## Features
+
+- 📊 HR Dashboard with statistics and charts
+- 🌓 Light/Dark mode support
+- 📱 Responsive design
+- ✨ Interactive cards with tilt effects
+- 🎯 Real-time data visualization
+
+## Tech Stack
+
+- Next.js 15
+- Tailwind CSS 3
+- React
+- TypeScript
+
+## Getting Started
+
+### Installation
 
 ```bash
-npm i
+npm install
 ```
 
-## Development
-
-First, run the development server:
+### Development
 
 ```bash
 npm run dev
 ```
 
-## Build
-
-To build the site for production, run the following command:
+### Build
 
 ```bash
 npm run build
 ```
 
-## Deploy
+### Export for static hosting
 
-This site is deployed using GitHub Pages.
+```bash
+NEXT_EXPORT=true npm run build
+```
+
+## Project Structure
+
+```
+.
+├── app/              # Next.js App Router
+├── components/       # UI Components
+├── data/             # Mock data
+├── demo/             # Component demos
+├── public/           # Static assets
+└── scripts/          # Utility scripts
+```
+
+## License
+
+MIT

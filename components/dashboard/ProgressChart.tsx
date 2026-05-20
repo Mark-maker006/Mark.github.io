@@ -1,23 +1,76 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useId, useEffect } from 'react';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { dashboardData } from '@/data/dashboard';
 import { TiltCard } from './TiltCard';
 
 export function ProgressChart() {
+  const id = useId();
+  const gradientIdLight = `areaGradientLight-${id}`;
+  const gradientIdDark = `areaGradientDark-${id}`;
+  
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const maxValue = Math.max(...dashboardData.chartData.map((d) => d.value));
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkDarkMode();
+    
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true });
+    
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <TiltCard className="cursor-pointer">
       <Tooltip.Provider delayDuration={200}>
         <div className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl border border-neutral-border dark:border-dark-neutral-border p-6 overflow-hidden">
-          <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain mb-6">
+          <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain mb-4">
             本周工作统计
           </h3>
 
-          <div className="relative h-64 pl-12 pr-4">
+          <div className="mb-4">
+            <div className="h-20">
+              <svg viewBox="0 0 300 80" className="w-full h-full" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id={gradientIdLight} x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.2" />
+                    <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
+                  </linearGradient>
+                  <linearGradient id={gradientIdDark} x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#D4FF00" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#D4FF00" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <path
+                  d="M0,60 Q30,50 60,55 T120,40 T180,45 T240,25 T300,30"
+                  fill="none"
+                  stroke="#FBBF24"
+                  strokeWidth="2"
+                  className="dark:stroke-[#D4FF00]"
+                />
+                <path
+                  d="M0,60 Q30,50 60,55 T120,40 T180,45 T240,25 T300,30 L300,80 L0,80 Z"
+                  fill={`url(#${isDarkMode ? gradientIdDark : gradientIdLight})`}
+                />
+
+                <circle cx="60" cy="55" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
+                <circle cx="120" cy="40" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
+                <circle cx="180" cy="45" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
+                <circle cx="240" cy="25" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
+                <circle cx="300" cy="30" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
+              </svg>
+            </div>
+          </div>
+
+          <div className="relative h-80 pl-12 pr-4">
             <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between">
               {[0, 1, 2, 3, 4].map((i) => (
                 <div
@@ -46,12 +99,12 @@ export function ProgressChart() {
                         onMouseLeave={() => setHoveredBar(null)}
                       >
                         <div
-                          className={`w-full max-w-10 rounded-t-lg transition-all duration-200 ${
+                          className={`w-full max-w-12 rounded-t-lg transition-all duration-200 ${
                             isHovered
-                              ? 'bg-primary-500 dark:bg-dark-primary-500'
-                              : 'bg-primary-400 dark:bg-dark-primary-400'
+                              ? 'bg-primary-600 dark:bg-dark-primary-500'
+                              : 'bg-primary-500 dark:bg-dark-primary-400'
                           }`}
-                          style={{ height: `${heightPercent * 0.8}%` }}
+                          style={{ height: `${heightPercent * 0.95}%` }}
                         />
                         <span className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted truncate">
                           {item.label}
@@ -70,45 +123,6 @@ export function ProgressChart() {
                   </Tooltip.Root>
                 );
               })}
-            </div>
-          </div>
-
-          <div className="mt-6 pt-6 border-t border-neutral-border dark:border-dark-neutral-border">
-            <h4 className="text-sm font-medium text-neutral-textMain dark:text-dark-neutral-textMain mb-4">
-              趋势分析
-            </h4>
-            <div className="h-20">
-              <svg viewBox="0 0 300 80" className="w-full h-full" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="areaGradientLight" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
-                  </linearGradient>
-                  <linearGradient id="areaGradientDark" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#D4FF00" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#D4FF00" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-
-                <path
-                  d="M0,60 Q30,50 60,55 T120,40 T180,45 T240,25 T300,30"
-                  fill="none"
-                  stroke="#FBBF24"
-                  strokeWidth="2"
-                  className="dark:stroke-[#D4FF00]"
-                />
-                <path
-                  d="M0,60 Q30,50 60,55 T120,40 T180,45 T240,25 T300,30 L300,80 L0,80 Z"
-                  fill="url(#areaGradientLight)"
-                  className="dark:fill-url(#areaGradientDark)"
-                />
-
-                <circle cx="60" cy="55" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="120" cy="40" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="180" cy="45" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="240" cy="25" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="300" cy="30" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-              </svg>
             </div>
           </div>
         </div>
