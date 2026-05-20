@@ -1,6 +1,6 @@
 import { LandingHeader, LandingHeaderMenuItem } from '@/components/landing';
 import ThemeSwitch from '@/components/shared/ThemeSwitch';
-import Image from 'next/image';
+import Image from '@/components/shared/Image';
 
 export const Header = ({ className }: { className?: string }) => {
   return (

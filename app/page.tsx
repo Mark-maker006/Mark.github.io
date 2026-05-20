@@ -15,7 +15,7 @@ import { LandingFaqCollapsibleSection } from '@/components/landing';
 import { LandingFooter } from '@/components/landing';
 import { LandingFooterColumn } from '@/components/landing';
 import { LandingFooterLink } from '@/components/landing';
-import Image from 'next/image';
+import Image from '@/components/shared/Image';
 import { Button } from '@/components/shared/ui/button';
 import Link from 'next/link';
 import { CreditCard, Lock, Shield, TrendingUp, Users, Zap } from 'lucide-react';

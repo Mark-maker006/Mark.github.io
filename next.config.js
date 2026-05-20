@@ -45,12 +45,13 @@ const securityHeaders = [
 
 module.exports = () => {
   const isExport = process.env.NEXT_EXPORT === 'true';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   
   const plugins = [withBundleAnalyzer];
   return plugins.reduce((acc, next) => next(acc), {
     output: isExport ? 'export' : undefined,
-    basePath: '',
-    assetPrefix: '',
+    basePath: basePath,
+    assetPrefix: basePath,
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
