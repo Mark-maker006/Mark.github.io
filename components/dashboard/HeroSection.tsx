@@ -3,6 +3,7 @@
 import { PlayIcon, VideoIcon, MapPinIcon, ClockIcon } from 'lucide-react';
 import { dashboardData } from '@/data/dashboard';
 import { TiltCard } from './TiltCard';
+import { getAssetPath } from '@/lib/utils';
 
 export function HeroSection() {
   return (
@@ -58,7 +59,7 @@ export function HeroSection() {
                 <div className="flex items-center gap-2 p-1.5 bg-neutral-background dark:bg-dark-neutral-border/30 rounded-lg">
                   <div className="w-8 h-8 rounded-full overflow-hidden shrink-0">
                     <img
-                      src={dashboardData.upcomingInterviews[0].avatar}
+                      src={getAssetPath(dashboardData.upcomingInterviews[0].avatar)}
                       alt={dashboardData.upcomingInterviews[0].name}
                       className="w-full h-full object-cover"
                     />
@@ -131,7 +132,7 @@ export function HeroSection() {
                             className="w-6 h-6 rounded-full border-2 border-neutral-surface dark:border-dark-neutral-surface overflow-hidden shrink-0"
                           >
                             <img
-                              src={candidate}
+                              src={getAssetPath(candidate)}
                               alt="Candidate"
                               className="w-full h-full object-cover"
                             />
