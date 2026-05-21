@@ -9,7 +9,7 @@ export const Footer = ({ className }: { className?: string }) => {
     <LandingFooter
       className={className}
       title="Mark.cc"
-      description="HR Dashboard - Manage your workforce efficiently"
+      description="面向中国团队的人力资源管理工作台"
       withBackground
       withBackgroundGlow={false}
       variant="primary"
@@ -28,30 +28,26 @@ export const Footer = ({ className }: { className?: string }) => {
         </div>
       }
     >
-      <LandingFooterColumn title="Product">
-        <LandingFooterLink href="/features">{'Features'}</LandingFooterLink>
-        <LandingFooterLink href="/pricing">{'Pricing'}</LandingFooterLink>
-        <LandingFooterLink href="/security">{'Security'}</LandingFooterLink>
-        <LandingFooterLink href="/faq">{'FAQ'}</LandingFooterLink>
+      <LandingFooterColumn title="产品">
+        <LandingFooterLink href="/features">{'功能'}</LandingFooterLink>
+        <LandingFooterLink href="/pricing">{'价格'}</LandingFooterLink>
+        <LandingFooterLink href="/security">{'安全'}</LandingFooterLink>
+        <LandingFooterLink href="/faq">{'常见问题'}</LandingFooterLink>
       </LandingFooterColumn>
-      <LandingFooterColumn title="Company">
-        <LandingFooterLink href="/about">{'About Us'}</LandingFooterLink>
-        <LandingFooterLink href="/careers">{'Careers'}</LandingFooterLink>
-        <LandingFooterLink href="/press">{'Press'}</LandingFooterLink>
+      <LandingFooterColumn title="公司">
+        <LandingFooterLink href="/about">{'关于我们'}</LandingFooterLink>
+        <LandingFooterLink href="/careers">{'加入我们'}</LandingFooterLink>
+        <LandingFooterLink href="/press">{'媒体报道'}</LandingFooterLink>
       </LandingFooterColumn>
-      <LandingFooterColumn title="Support">
-        <LandingFooterLink href="/help">{'Help Center'}</LandingFooterLink>
-        <LandingFooterLink href="/contact">{'Contact Us'}</LandingFooterLink>
-        <LandingFooterLink href="/status">{'System Status'}</LandingFooterLink>
+      <LandingFooterColumn title="支持">
+        <LandingFooterLink href="/help">{'帮助中心'}</LandingFooterLink>
+        <LandingFooterLink href="/contact">{'联系我们'}</LandingFooterLink>
+        <LandingFooterLink href="/status">{'系统状态'}</LandingFooterLink>
       </LandingFooterColumn>
-      <LandingFooterColumn title="Legal">
-        <LandingFooterLink href="/terms">
-          {'Terms of Service'}
-        </LandingFooterLink>
-        <LandingFooterLink href="/privacy">
-          {'Privacy Policy'}
-        </LandingFooterLink>
-        <LandingFooterLink href="/cookies">{'Cookie Policy'}</LandingFooterLink>
+      <LandingFooterColumn title="法律">
+        <LandingFooterLink href="/terms">{'服务条款'}</LandingFooterLink>
+        <LandingFooterLink href="/privacy">{'隐私政策'}</LandingFooterLink>
+        <LandingFooterLink href="/cookies">{'Cookie 政策'}</LandingFooterLink>
       </LandingFooterColumn>
     </LandingFooter>
   );

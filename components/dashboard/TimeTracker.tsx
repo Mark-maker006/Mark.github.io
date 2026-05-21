@@ -13,12 +13,15 @@ export function TimeTracker() {
     <TiltCard className="cursor-pointer">
       <div className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl border border-neutral-border dark:border-dark-neutral-border p-6">
         <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain mb-6 text-center">
-          工作时长追踪
+          本周工作负载
         </h3>
 
         <div className="flex items-center justify-center">
           <div className="relative w-44 h-44">
-            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 160 160">
+            <svg
+              className="w-full h-full transform -rotate-90"
+              viewBox="0 0 160 160"
+            >
               <circle
                 cx="80"
                 cy="80"
@@ -57,7 +60,7 @@ export function TimeTracker() {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 dark:bg-dark-primary-500/10 rounded-full">
             <span className="w-2 h-2 bg-primary-500 dark:bg-dark-primary-500 rounded-full animate-pulse" />
             <span className="text-sm font-medium text-primary-700 dark:text-dark-primary-700">
-              完成 {percentage}%
+              已完成 {percentage}%
             </span>
           </div>
         </div>

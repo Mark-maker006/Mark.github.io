@@ -1,7 +1,7 @@
 const metadata = {
-  title: 'Mark.cc | HR Dashboard',
+  title: 'Mark.cc | 人力资源管理工作台',
   description:
-    'HR Dashboard - Manage your workforce efficiently. Track employees, interviews, and recruitment processes with ease.',
+    '面向中国团队的人力资源管理工作台，轻松跟踪员工、面试和招聘流程。',
   domain: 'mark.cc',
   logoTitle: '',
   businessName: 'Mark.cc',

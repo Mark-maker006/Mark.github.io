@@ -33,15 +33,15 @@ export function ProfileCard() {
         <div className="space-y-3 mt-6 pt-4 border-t border-neutral-border dark:border-dark-neutral-border">
           <div className="flex items-center gap-3 text-sm text-neutral-textMain dark:text-dark-neutral-textMain min-w-0">
             <MailIcon className="w-4 h-4 shrink-0 text-neutral-textMuted dark:text-dark-neutral-textMuted" />
-            <span className="truncate">sarah.chen@crextio.com</span>
+            <span className="truncate">sihan.chen@mark.cc</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-neutral-textMain dark:text-dark-neutral-textMain">
             <PhoneIcon className="w-4 h-4 shrink-0 text-neutral-textMuted dark:text-dark-neutral-textMuted" />
-            <span>+1 (555) 123-4567</span>
+            <span>+86 138 0000 1234</span>
           </div>
           <div className="flex items-center gap-3 text-sm text-neutral-textMain dark:text-dark-neutral-textMain min-w-0">
             <MapPinIcon className="w-4 h-4 shrink-0 text-neutral-textMuted dark:text-dark-neutral-textMuted" />
-            <span className="truncate">北京市朝阳区</span>
+            <span className="truncate">上海市徐汇区</span>
           </div>
         </div>
       </div>

@@ -23,16 +23,12 @@ export const Header = ({ className }: { className?: string }) => {
         </div>
       }
     >
-      <LandingHeaderMenuItem href="/features">
-        {'Features'}
-      </LandingHeaderMenuItem>
-      <LandingHeaderMenuItem href="/pricing">{'Pricing'}</LandingHeaderMenuItem>
-      <LandingHeaderMenuItem href="/security">
-        {'Security'}
-      </LandingHeaderMenuItem>
-      <LandingHeaderMenuItem href="/help">{'Help'}</LandingHeaderMenuItem>
+      <LandingHeaderMenuItem href="/features">{'功能'}</LandingHeaderMenuItem>
+      <LandingHeaderMenuItem href="/pricing">{'价格'}</LandingHeaderMenuItem>
+      <LandingHeaderMenuItem href="/security">{'安全'}</LandingHeaderMenuItem>
+      <LandingHeaderMenuItem href="/help">{'帮助'}</LandingHeaderMenuItem>
       <LandingHeaderMenuItem type="button" href="/dashboard">
-        Dashboard
+        进入工作台
       </LandingHeaderMenuItem>
 
       <ThemeSwitch />

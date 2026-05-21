@@ -1,14 +1,19 @@
 'use client';
 
 import * as Accordion from '@radix-ui/react-accordion';
-import { ChevronDownIcon, LaptopIcon, DollarSignIcon, GiftIcon } from 'lucide-react';
+import {
+  ChevronDownIcon,
+  LaptopIcon,
+  DollarSignIcon,
+  GiftIcon,
+} from 'lucide-react';
 import { dashboardData } from '@/data/dashboard';
 import { TiltCard } from './TiltCard';
 
 const iconMap: Record<string, typeof LaptopIcon> = {
   办公设备: LaptopIcon,
-  薪酬福利: DollarSignIcon,
-  其他福利: GiftIcon,
+  薪酬信息: DollarSignIcon,
+  员工福利: GiftIcon,
 };
 
 export function AccordionList() {

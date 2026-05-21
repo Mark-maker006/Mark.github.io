@@ -14,15 +14,15 @@ export const APP_INFO_TEXT = `
 
 
 -------------------
-Please do not remove the information below.
+请不要删除以下诊断信息。
 
-Location: ${appWindow?.location.href}
-Version: ${version}
-Device Info: ${appNavigator?.userAgent}
-Window Size: ${appWindow?.innerWidth} x ${appWindow?.innerHeight}
-Platform: ${appNavigator?.platform}
-Cookies Enabled: ${appNavigator?.cookieEnabled}
-Connection: ${
+页面地址: ${appWindow?.location.href}
+版本: ${version}
+设备信息: ${appNavigator?.userAgent}
+窗口大小: ${appWindow?.innerWidth} x ${appWindow?.innerHeight}
+平台: ${appNavigator?.platform}
+Cookie 启用: ${appNavigator?.cookieEnabled}
+网络连接: ${
   (
     appNavigator as unknown as {
       connection: {
@@ -34,7 +34,7 @@ Connection: ${
 -------------------
 `;
 
-const HELP_SUBJECT = `[${metadata.businessName}] Support Request`;
+const HELP_SUBJECT = `[${metadata.businessName}] 支持请求`;
 
 export const HELP_HREF = `mailto:${SUPPORT_EMAIL}?subject=${HELP_SUBJECT}&body=${sanitizeMailBody(
   APP_INFO_TEXT,
@@ -48,7 +48,7 @@ export const FooterSupportButton = () => {
 
   return (
     <a href="#" onClick={openSupport} className={'nav-link'}>
-      Contact Support
+      联系支持
     </a>
   );
 };

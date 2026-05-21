@@ -9,10 +9,10 @@ export function HeroSection() {
   return (
     <div className="mb-8">
       <h1 className="text-3xl font-bold text-neutral-textMain dark:text-dark-neutral-textMain mb-3 leading-tight">
-        欢迎回来，陈思涵
+        欢迎回来，思涵
       </h1>
       <p className="text-base text-neutral-textMuted dark:text-dark-neutral-textMuted mb-6">
-        查看今日招聘动态
+        今天的招聘进展、团队负载和入职事项已为你整理好。
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
@@ -42,7 +42,7 @@ export function HeroSection() {
                 快捷操作
               </h2>
               <p className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                一键开始新的面试流程
+                一键开启下一场面试流程
               </p>
             </div>
 
@@ -53,13 +53,15 @@ export function HeroSection() {
 
             <div className="border-t border-neutral-border dark:border-dark-neutral-border pt-3 mt-3">
               <h3 className="text-xs font-medium text-neutral-textMuted dark:text-dark-neutral-textMuted mb-2">
-                即将面试
+                即将开始
               </h3>
               {dashboardData.upcomingInterviews.length > 0 && (
                 <div className="flex items-center gap-2 p-1.5 bg-neutral-background dark:bg-dark-neutral-border/30 rounded-lg">
                   <div className="w-8 h-8 rounded-full overflow-hidden shrink-0">
                     <img
-                      src={getAssetPath(dashboardData.upcomingInterviews[0].avatar)}
+                      src={getAssetPath(
+                        dashboardData.upcomingInterviews[0].avatar,
+                      )}
                       alt={dashboardData.upcomingInterviews[0].name}
                       className="w-full h-full object-cover"
                     />
@@ -69,7 +71,8 @@ export function HeroSection() {
                       {dashboardData.upcomingInterviews[0].name}
                     </span>
                     <div className="flex items-center gap-1.5 mt-0.5">
-                      {dashboardData.upcomingInterviews[0].type === '视频面试' ? (
+                      {dashboardData.upcomingInterviews[0].type ===
+                      '视频面试' ? (
                         <VideoIcon className="w-3 h-3 text-primary-500 dark:text-dark-primary-500" />
                       ) : (
                         <MapPinIcon className="w-3 h-3 text-primary-500 dark:text-dark-primary-500" />
@@ -91,7 +94,7 @@ export function HeroSection() {
 
       <TiltCard className="cursor-pointer">
         <div className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl border border-neutral-border dark:border-dark-neutral-border p-4">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between gap-3 mb-4">
             <h3 className="text-base font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
               今日日程
             </h3>

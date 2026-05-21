@@ -27,12 +27,10 @@ export default function PricingPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
             <div className="w-full lg:w-auto mx-auto max-w-4xl lg:text-center">
               <h1 className="text-4xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-6xl fancy-heading">
-                Pricing
+                价格方案
               </h1>
               <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg leading-relaxed max-w-lg">
-                Choose the plan that's right for you. We offer a free plan for
-                those who are just starting out, and a paid plan for those who
-                need more features.
+                选择适合你团队阶段的方案。小团队可以免费开始，成长团队可按需升级更多自动化、权限和安全能力。
               </p>
             </div>
 
@@ -56,7 +54,7 @@ export default function PricingPage() {
                     gridTemplateColumns: `repeat(${frequencies.length}, minmax(0, 1fr))`,
                   }}
                 >
-                  <Label className="sr-only">Payment frequency</Label>
+                  <Label className="sr-only">付款周期</Label>
                   {frequencies.map((option) => (
                     <Label
                       className={cn(
@@ -179,7 +177,7 @@ export default function PricingPage() {
                       )}
                       variant={tier.highlighted ? 'default' : 'outline'}
                     >
-                      {tier.soldOut ? 'Sold out' : tier.cta}
+                      {tier.soldOut ? '暂未开放' : tier.cta}
                     </Button>
                   </a>
 

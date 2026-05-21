@@ -9,7 +9,6 @@ export function ProgressChart() {
   const id = useId();
   const gradientIdLight = `areaGradientLight-${id}`;
   const gradientIdDark = `areaGradientDark-${id}`;
-  
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const maxValue = Math.max(...dashboardData.chartData.map((d) => d.value));
@@ -18,12 +17,12 @@ export function ProgressChart() {
     const checkDarkMode = () => {
       setIsDarkMode(document.documentElement.classList.contains('dark'));
     };
-    
+
     checkDarkMode();
-    
+
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, { attributes: true });
-    
+
     return () => observer.disconnect();
   }, []);
 
@@ -32,18 +31,34 @@ export function ProgressChart() {
       <Tooltip.Provider delayDuration={200}>
         <div className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl border border-neutral-border dark:border-dark-neutral-border p-6 overflow-hidden">
           <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain mb-4">
-            本周工作统计
+            本周招聘活跃度
           </h3>
 
           <div className="mb-4">
             <div className="h-20">
-              <svg viewBox="0 0 300 80" className="w-full h-full" preserveAspectRatio="none">
+              <svg
+                viewBox="0 0 300 80"
+                className="w-full h-full"
+                preserveAspectRatio="none"
+              >
                 <defs>
-                  <linearGradient id={gradientIdLight} x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient
+                    id={gradientIdLight}
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.2" />
                     <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
                   </linearGradient>
-                  <linearGradient id={gradientIdDark} x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient
+                    id={gradientIdDark}
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#D4FF00" stopOpacity="0.3" />
                     <stop offset="100%" stopColor="#D4FF00" stopOpacity="0" />
                   </linearGradient>
@@ -61,11 +76,16 @@ export function ProgressChart() {
                   fill={`url(#${isDarkMode ? gradientIdDark : gradientIdLight})`}
                 />
 
-                <circle cx="60" cy="55" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="120" cy="40" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="180" cy="45" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="240" cy="25" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
-                <circle cx="300" cy="30" r="4" fill="#FBBF24" className="dark:fill-[#D4FF00]" />
+                {[60, 120, 180, 240, 300].map((cx, index) => (
+                  <circle
+                    key={cx}
+                    cx={cx}
+                    cy={[55, 40, 45, 25, 30][index]}
+                    r="4"
+                    fill="#FBBF24"
+                    className="dark:fill-[#D4FF00]"
+                  />
+                ))}
               </svg>
             </div>
           </div>
@@ -73,10 +93,7 @@ export function ProgressChart() {
           <div className="relative h-80 pl-12 pr-4">
             <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between">
               {[0, 1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="relative flex items-center"
-                >
+                <div key={i} className="relative flex items-center">
                   <span className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted whitespace-nowrap">
                     {Math.round(maxValue - (maxValue / 4) * i)}
                   </span>

@@ -6,7 +6,7 @@ import { TiltCard } from './TiltCard';
 
 export function OnboardingCard() {
   const completedCount = dashboardData.onboardingTasks.filter(
-    (task) => task.completed
+    (task) => task.completed,
   ).length;
   const totalCount = dashboardData.onboardingTasks.length;
   const progressPercent = (completedCount / totalCount) * 100;
@@ -16,7 +16,7 @@ export function OnboardingCard() {
       <div className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl p-6 border border-neutral-border dark:border-dark-neutral-border">
         <div className="flex items-center justify-between mb-6 min-w-0">
           <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain truncate">
-            入职待办事项
+            入职待办
           </h3>
           <span className="text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted shrink-0 ml-2">
             {completedCount}/{totalCount} 已完成
