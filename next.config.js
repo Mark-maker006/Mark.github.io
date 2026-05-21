@@ -1,6 +1,7 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+const path = require('path');
 
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -46,10 +47,11 @@ const securityHeaders = [
 module.exports = () => {
   const isExport = process.env.NEXT_EXPORT === 'true';
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  
+
   const plugins = [withBundleAnalyzer];
   return plugins.reduce((acc, next) => next(acc), {
     output: isExport ? 'export' : undefined,
+    outputFileTracingRoot: path.join(__dirname),
     basePath: basePath,
     assetPrefix: basePath,
     reactStrictMode: true,

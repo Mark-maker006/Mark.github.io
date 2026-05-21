@@ -1,4 +1,3 @@
-import { Nunito_Sans } from 'next/font/google';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
@@ -9,22 +8,15 @@ import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
 import { AnalyticsWrapper } from '@/components/shared/Analytics';
 
-const displayFont = Nunito_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-display',
-});
-
-const baseFont = Nunito_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-default',
-});
-
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const fontStack =
+  '"Nunito Sans", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif';
 
 const globalColors = colors;
-const style: string[] = [];
+const style: string[] = [
+  `--font-space-default: ${fontStack}`,
+  `--font-space-display: ${fontStack}`,
+];
 
 Object.keys(globalColors).map((variant) => {
   return Object.keys(globalColors[variant]).map((color) => {
@@ -81,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.language}
-      className={`${baseFont.variable} ${displayFont.variable} scroll-smooth`}
+      className="scroll-smooth"
       suppressHydrationWarning
     >
       <head>
@@ -110,7 +102,10 @@ export default function RootLayout({
           sizes="16x16"
           href={`${basePath}/static/favicons/favicon-16x16.png`}
         />
-        <link rel="manifest" href={`${basePath}/static/favicons/manifest.webmanifest`} />
+        <link
+          rel="manifest"
+          href={`${basePath}/static/favicons/manifest.webmanifest`}
+        />
         <link
           rel="mask-icon"
           href={`${basePath}/static/favicons/safari-pinned-tab.svg`}

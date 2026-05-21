@@ -28,6 +28,7 @@ jobs:
       - name: Build and export
         env:
           NEXT_EXPORT: 'true'
+          NEXT_PUBLIC_BASE_PATH: '/Mark.github.io'
         run: npm run build
 
       - name: Setup Pages
