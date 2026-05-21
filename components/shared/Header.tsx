@@ -1,4 +1,5 @@
-import { LandingHeader, LandingHeaderMenuItem } from '@/components/landing';
+import { LandingHeader } from '@/components/landing/navigation/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/navigation/LandingHeaderMenuItem';
 import ThemeSwitch from '@/components/shared/ThemeSwitch';
 import Image from '@/components/shared/Image';
 
@@ -12,7 +13,7 @@ export const Header = ({ className }: { className?: string }) => {
       logoComponent={
         <div className="flex items-center text-primary-500 dark:text-primary-500 gap-3">
           <Image
-            src="/static/images/logo.png"
+            src="/static/images/logo.webp"
             alt="Mark.cc logo"
             width={200}
             height={200}

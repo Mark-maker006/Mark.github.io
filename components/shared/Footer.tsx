@@ -1,8 +1,6 @@
-import {
-  LandingFooter,
-  LandingFooterColumn,
-  LandingFooterLink,
-} from '@/components/landing';
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
 import Image from '@/components/shared/Image';
 import Link from 'next/link';
 
@@ -20,7 +18,7 @@ export const Footer = ({ className }: { className?: string }) => {
       logoComponent={
         <div className="flex items-center text-primary-900 dark:text-primary-100 gap-3">
           <Image
-            src="/static/images/logo.png"
+            src="/static/images/logo.webp"
             alt="Mark.cc logo"
             width={200}
             height={200}
