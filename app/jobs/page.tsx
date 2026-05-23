@@ -12,6 +12,7 @@ import {
   UsersRoundIcon,
 } from 'lucide-react';
 
+import { TiltCard } from '@/components/dashboard/TiltCard';
 import { TopNav } from '@/components/dashboard/TopNav';
 import { Badge } from '@/components/shared/ui/badge';
 import { Button } from '@/components/shared/ui/button';
@@ -103,67 +104,75 @@ export default function JobsPage() {
         <TopNav />
 
         <section className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-          <div className="rounded-2xl border border-neutral-border bg-neutral-surface p-5 shadow-[var(--shadow-elevated)] dark:border-dark-neutral-border dark:bg-dark-neutral-surface sm:p-6 lg:col-span-7">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary-500/15 px-3 py-1 text-sm font-medium text-neutral-textMain dark:bg-dark-primary-500/15 dark:text-dark-secondary-500">
-              <BriefcaseBusinessIcon className="h-4 w-4 text-primary-500 dark:text-dark-primary-500" />
-              职位管道
-            </div>
-            <h1 className="text-3xl font-bold leading-tight text-neutral-textMain dark:text-dark-neutral-textMain">
-              职位管理
-            </h1>
-            <p className="mt-2 max-w-2xl text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted sm:text-base">
-              从一个招聘运营视图查看开放职位、招聘速度和团队负责人。
-            </p>
-
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {pipeline.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-2xl bg-neutral-background p-4 dark:bg-dark-neutral-background"
-                >
-                  <div className="text-2xl font-bold leading-none text-neutral-textMain dark:text-dark-neutral-textMain">
-                    {item.value}
-                  </div>
-                  <p className="mt-2 text-sm font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
-                    {item.label}
-                  </p>
-                  <p className="mt-1 text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                    {item.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-border bg-neutral-surface p-5 dark:border-dark-neutral-border dark:bg-dark-neutral-surface sm:p-6 lg:col-span-5">
-            <div className="mb-5 flex items-center justify-between">
-              <div>
-                <h2 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
-                  管道概览
-                </h2>
-                <p className="text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                  按阶段查看候选人流转
-                </p>
+          <TiltCard maxRotation={4} scale={1.01} className="lg:col-span-7">
+            <div className="h-full rounded-2xl border border-neutral-border bg-neutral-surface p-5 shadow-[var(--shadow-elevated)] dark:border-dark-neutral-border dark:bg-dark-neutral-surface sm:p-6">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary-500/15 px-3 py-1 text-sm font-medium text-neutral-textMain dark:bg-dark-primary-500/15 dark:text-dark-secondary-500">
+                <BriefcaseBusinessIcon className="h-4 w-4 text-primary-500 dark:text-dark-primary-500" />
+                职位管道
               </div>
-              <Layers3Icon className="h-5 w-5 text-primary-500 dark:text-dark-primary-500" />
-            </div>
+              <h1 className="text-3xl font-bold leading-tight text-neutral-textMain dark:text-dark-neutral-textMain">
+                职位管理
+              </h1>
+              <p className="mt-2 max-w-2xl text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted sm:text-base">
+                从一个招聘运营视图查看开放职位、招聘速度和团队负责人。
+              </p>
 
-            <div className="space-y-4">
-              {pipelineStages.map((stage) => (
-                <div key={stage.label}>
-                  <div className="mb-2 flex items-center justify-between text-sm">
-                    <span className="font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
-                      {stage.label}
-                    </span>
-                    <span className="text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                      {stage.count}
-                    </span>
-                  </div>
-                  <Progress value={stage.value} className="h-2" />
-                </div>
-              ))}
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {pipeline.map((item) => (
+                  <TiltCard
+                    key={item.label}
+                    className="h-full cursor-pointer"
+                    maxRotation={8}
+                    scale={1.02}
+                  >
+                    <div className="h-full rounded-2xl bg-neutral-background p-4 dark:bg-dark-neutral-background">
+                      <div className="text-2xl font-bold leading-none text-neutral-textMain dark:text-dark-neutral-textMain">
+                        {item.value}
+                      </div>
+                      <p className="mt-2 text-sm font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
+                        {item.label}
+                      </p>
+                      <p className="mt-1 text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                        {item.detail}
+                      </p>
+                    </div>
+                  </TiltCard>
+                ))}
+              </div>
             </div>
-          </div>
+          </TiltCard>
+
+          <TiltCard maxRotation={5} scale={1.01} className="lg:col-span-5">
+            <div className="h-full rounded-2xl border border-neutral-border bg-neutral-surface p-5 dark:border-dark-neutral-border dark:bg-dark-neutral-surface sm:p-6">
+              <div className="mb-5 flex items-center justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
+                    管道概览
+                  </h2>
+                  <p className="text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                    按阶段查看候选人流转
+                  </p>
+                </div>
+                <Layers3Icon className="h-5 w-5 text-primary-500 dark:text-dark-primary-500" />
+              </div>
+
+              <div className="space-y-4">
+                {pipelineStages.map((stage) => (
+                  <div key={stage.label}>
+                    <div className="mb-2 flex items-center justify-between text-sm">
+                      <span className="font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
+                        {stage.label}
+                      </span>
+                      <span className="text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                        {stage.count}
+                      </span>
+                    </div>
+                    <Progress value={stage.value} className="h-2" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </TiltCard>
         </section>
 
         <section className="rounded-2xl border border-neutral-border bg-neutral-surface p-4 dark:border-dark-neutral-border dark:bg-dark-neutral-surface sm:p-5">
@@ -192,104 +201,112 @@ export default function JobsPage() {
 
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
             {jobs.map((job) => (
-              <article
+              <TiltCard
                 key={job.title}
-                className="rounded-2xl border border-neutral-border bg-neutral-background p-4 dark:border-dark-neutral-border dark:bg-dark-neutral-background sm:p-5"
+                className="h-full cursor-pointer"
+                maxRotation={6}
+                scale={1.02}
               >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="min-w-0">
-                    <div className="mb-3 flex flex-wrap items-center gap-2">
-                      <Badge
-                        className={`border-transparent ${priorityClass(job.priority)}`}
-                      >
-                        <FlameIcon className="mr-1 h-3.5 w-3.5" />
-                        {job.priority}
-                      </Badge>
-                      <Badge
-                        variant="outline"
-                        className="border-neutral-border text-neutral-textMuted dark:border-dark-neutral-border dark:text-dark-neutral-textMuted"
-                      >
-                        {job.department}
-                      </Badge>
+                <article className="h-full rounded-2xl border border-neutral-border bg-neutral-background p-4 dark:border-dark-neutral-border dark:bg-dark-neutral-background sm:p-5">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="min-w-0">
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
+                        <Badge
+                          className={`border-transparent ${priorityClass(job.priority)}`}
+                        >
+                          <FlameIcon className="mr-1 h-3.5 w-3.5" />
+                          {job.priority}
+                        </Badge>
+                        <Badge
+                          variant="outline"
+                          className="border-neutral-border text-neutral-textMuted dark:border-dark-neutral-border dark:text-dark-neutral-textMuted"
+                        >
+                          {job.department}
+                        </Badge>
+                      </div>
+                      <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
+                        {job.title}
+                      </h3>
+                      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                        <span className="inline-flex items-center gap-1.5">
+                          <Building2Icon className="h-4 w-4" />
+                          {job.location}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <CalendarDaysIcon className="h-4 w-4" />
+                          目标 {job.target}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <UsersRoundIcon className="h-4 w-4" />
+                          {job.candidates} 位候选人
+                        </span>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
-                      {job.title}
-                    </h3>
-                    <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                      <span className="inline-flex items-center gap-1.5">
-                        <Building2Icon className="h-4 w-4" />
-                        {job.location}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <CalendarDaysIcon className="h-4 w-4" />
-                        目标 {job.target}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <UsersRoundIcon className="h-4 w-4" />
-                        {job.candidates} 位候选人
-                      </span>
+
+                    <div className="flex items-center gap-3 rounded-2xl bg-neutral-surface px-3 py-2 dark:bg-dark-neutral-surface">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-500 text-xs font-bold text-neutral-900 dark:bg-dark-primary-500 dark:text-dark-neutral-background">
+                        {job.initials}
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
+                          {job.owner}
+                        </p>
+                        <p className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                          团队负责人
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 rounded-2xl bg-neutral-surface px-3 py-2 dark:bg-dark-neutral-surface">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-500 text-xs font-bold text-neutral-900 dark:bg-dark-primary-500 dark:text-dark-neutral-background">
-                      {job.initials}
+                  <div className="mt-5">
+                    <div className="mb-2 flex items-center justify-between text-sm">
+                      <span className="text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                        招聘进度
+                      </span>
+                      <span className="font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
+                        {job.progress}%
+                      </span>
                     </div>
-                    <div>
-                      <p className="text-sm font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
-                        {job.owner}
-                      </p>
-                      <p className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                        团队负责人
-                      </p>
-                    </div>
+                    <Progress value={job.progress} className="h-2" />
                   </div>
-                </div>
-
-                <div className="mt-5">
-                  <div className="mb-2 flex items-center justify-between text-sm">
-                    <span className="text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                      招聘进度
-                    </span>
-                    <span className="font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
-                      {job.progress}%
-                    </span>
-                  </div>
-                  <Progress value={job.progress} className="h-2" />
-                </div>
-              </article>
+                </article>
+              </TiltCard>
             ))}
           </div>
         </section>
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {teamLeads.map((lead) => (
-            <div
+            <TiltCard
               key={lead.name}
-              className="rounded-2xl border border-neutral-border bg-neutral-surface p-5 dark:border-dark-neutral-border dark:bg-dark-neutral-surface"
+              className="h-full cursor-pointer"
+              maxRotation={7}
+              scale={1.02}
             >
-              <div className="mb-4 flex items-center justify-between">
-                <div className="rounded-xl bg-primary-500/15 p-2 text-primary-600 dark:bg-dark-primary-500/15 dark:text-dark-primary-500">
-                  <UserRoundIcon className="h-5 w-5" />
+              <div className="h-full rounded-2xl border border-neutral-border bg-neutral-surface p-5 dark:border-dark-neutral-border dark:bg-dark-neutral-surface">
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="rounded-xl bg-primary-500/15 p-2 text-primary-600 dark:bg-dark-primary-500/15 dark:text-dark-primary-500">
+                    <UserRoundIcon className="h-5 w-5" />
+                  </div>
+                  <Badge
+                    variant="outline"
+                    className="border-neutral-border text-neutral-textMuted dark:border-dark-neutral-border dark:text-dark-neutral-textMuted"
+                  >
+                    {lead.load}
+                  </Badge>
                 </div>
-                <Badge
-                  variant="outline"
-                  className="border-neutral-border text-neutral-textMuted dark:border-dark-neutral-border dark:text-dark-neutral-textMuted"
-                >
-                  {lead.load}
-                </Badge>
+                <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
+                  {lead.name}
+                </h3>
+                <p className="mt-1 text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                  {lead.team}
+                </p>
+                <div className="mt-4 flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-dark-primary-500">
+                  <CheckCircle2Icon className="h-4 w-4" />
+                  本周校准已完成
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
-                {lead.name}
-              </h3>
-              <p className="mt-1 text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                {lead.team}
-              </p>
-              <div className="mt-4 flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-dark-primary-500">
-                <CheckCircle2Icon className="h-4 w-4" />
-                本周校准已完成
-              </div>
-            </div>
+            </TiltCard>
           ))}
         </section>
       </div>

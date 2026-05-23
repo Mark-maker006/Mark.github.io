@@ -14,6 +14,7 @@ import {
   Webhook,
 } from 'lucide-react';
 import { TopNav } from '@/components/dashboard';
+import { TiltCard } from '@/components/dashboard/TiltCard';
 import { Badge } from '@/components/shared/ui/badge';
 import { Button } from '@/components/shared/ui/button';
 import { Input } from '@/components/shared/ui/input';
@@ -75,35 +76,37 @@ export default function SettingsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         <TopNav />
 
-        <section className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl border border-neutral-border dark:border-dark-neutral-border shadow-[var(--shadow-elevated)] p-6">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <Badge className="mb-3 bg-primary-500 text-neutral-textMain hover:bg-primary-500 dark:text-dark-neutral-background">
-                工作区设置
-              </Badge>
-              <h1 className="text-3xl font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
-                系统偏好
-              </h1>
-              <p className="mt-2 max-w-2xl text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                管理组织信息、自动化规则、访问权限和已连接的招聘系统。
-              </p>
-            </div>
+        <TiltCard maxRotation={3} scale={1.01}>
+          <section className="bg-neutral-surface dark:bg-dark-neutral-surface rounded-2xl border border-neutral-border dark:border-dark-neutral-border shadow-[var(--shadow-elevated)] p-6">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <Badge className="mb-3 bg-primary-500 text-neutral-textMain hover:bg-primary-500 dark:text-dark-neutral-background">
+                  工作区设置
+                </Badge>
+                <h1 className="text-3xl font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
+                  系统偏好
+                </h1>
+                <p className="mt-2 max-w-2xl text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                  管理组织信息、自动化规则、访问权限和已连接的招聘系统。
+                </p>
+              </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <Tabs defaultValue="general">
-                <TabsList className="bg-neutral-background dark:bg-dark-neutral-background">
-                  <TabsTrigger value="general">通用</TabsTrigger>
-                  <TabsTrigger value="access">权限</TabsTrigger>
-                  <TabsTrigger value="apps">应用</TabsTrigger>
-                </TabsList>
-              </Tabs>
-              <Button variant="primary" className="gap-2">
-                <Save className="h-4 w-4" />
-                保存更改
-              </Button>
+              <div className="flex flex-wrap items-center gap-3">
+                <Tabs defaultValue="general">
+                  <TabsList className="bg-neutral-background dark:bg-dark-neutral-background">
+                    <TabsTrigger value="general">通用</TabsTrigger>
+                    <TabsTrigger value="access">权限</TabsTrigger>
+                    <TabsTrigger value="apps">应用</TabsTrigger>
+                  </TabsList>
+                </Tabs>
+                <Button variant="primary" className="gap-2">
+                  <Save className="h-4 w-4" />
+                  保存更改
+                </Button>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </TiltCard>
 
         <section className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           <div className="rounded-2xl border border-neutral-border bg-neutral-surface p-6 shadow-[var(--shadow-elevated)] dark:border-dark-neutral-border dark:bg-dark-neutral-surface lg:col-span-7">
@@ -222,27 +225,31 @@ export default function SettingsPage() {
 
             <div className="mt-6 space-y-3">
               {roles.map((role) => (
-                <div
+                <TiltCard
                   key={role.name}
-                  className="rounded-2xl border border-neutral-border bg-neutral-background p-4 dark:border-dark-neutral-border dark:bg-dark-neutral-background"
+                  className="cursor-pointer"
+                  maxRotation={5}
+                  scale={1.01}
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-xl bg-primary-500/15 p-2 text-primary-600 dark:text-primary-500">
-                        <UsersRound className="h-4 w-4" />
+                  <div className="rounded-2xl border border-neutral-border bg-neutral-background p-4 dark:border-dark-neutral-border dark:bg-dark-neutral-background">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-xl bg-primary-500/15 p-2 text-primary-600 dark:text-primary-500">
+                          <UsersRound className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
+                            {role.name}
+                          </p>
+                          <p className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                            {role.access}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-medium text-neutral-textMain dark:text-dark-neutral-textMain">
-                          {role.name}
-                        </p>
-                        <p className="text-xs text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                          {role.access}
-                        </p>
-                      </div>
+                      <Badge variant="outline">{role.users} 人</Badge>
                     </div>
-                    <Badge variant="outline">{role.users} 人</Badge>
                   </div>
-                </div>
+                </TiltCard>
               ))}
             </div>
 
@@ -271,33 +278,37 @@ export default function SettingsPage() {
                 const isWarning = integration.status === '需处理';
 
                 return (
-                  <div
+                  <TiltCard
                     key={integration.name}
-                    className="rounded-2xl border border-neutral-border bg-neutral-background p-5 dark:border-dark-neutral-border dark:bg-dark-neutral-background"
+                    className="h-full cursor-pointer"
+                    maxRotation={6}
+                    scale={1.02}
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="rounded-xl bg-primary-500/15 p-2 text-primary-600 dark:text-primary-500">
-                        <Icon className="h-5 w-5" />
+                    <div className="h-full rounded-2xl border border-neutral-border bg-neutral-background p-5 dark:border-dark-neutral-border dark:bg-dark-neutral-background">
+                      <div className="flex items-center justify-between">
+                        <div className="rounded-xl bg-primary-500/15 p-2 text-primary-600 dark:text-primary-500">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        {isWarning ? (
+                          <CircleAlert className="h-5 w-5 text-amber-500" />
+                        ) : (
+                          <CheckCircle2 className="h-5 w-5 text-green-500" />
+                        )}
                       </div>
-                      {isWarning ? (
-                        <CircleAlert className="h-5 w-5 text-amber-500" />
-                      ) : (
-                        <CheckCircle2 className="h-5 w-5 text-green-500" />
-                      )}
+                      <h3 className="mt-5 font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
+                        {integration.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
+                        {integration.detail}
+                      </p>
+                      <Badge
+                        variant={isWarning ? 'secondary' : 'outline'}
+                        className="mt-4"
+                      >
+                        {integration.status}
+                      </Badge>
                     </div>
-                    <h3 className="mt-5 font-semibold text-neutral-textMain dark:text-dark-neutral-textMain">
-                      {integration.name}
-                    </h3>
-                    <p className="mt-1 text-sm text-neutral-textMuted dark:text-dark-neutral-textMuted">
-                      {integration.detail}
-                    </p>
-                    <Badge
-                      variant={isWarning ? 'secondary' : 'outline'}
-                      className="mt-4"
-                    >
-                      {integration.status}
-                    </Badge>
-                  </div>
+                  </TiltCard>
                 );
               })}
             </div>
